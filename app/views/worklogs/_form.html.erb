@@ -1,0 +1,34 @@
+<div class="container">
+  <%= form_with(model: worklog) do |form| %>
+    <% if worklog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(worklog.errors.count, "error") %> prohibited this worklog from being saved:</h2>
+
+        <ul>
+          <% worklog.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :task %>
+      <%= form.collection_select :tasks_id, Task.all, :id, :name, { prompt: "Select a Task" }, class: 'form-select' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :minutes_worked %>
+      <%= form.number_field :minutes_worked, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

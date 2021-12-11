@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Worklogs</h1>
+
+<table class="table table-striped table-bordered table-responsive-sm">
+  <thead>
+    <tr>
+      <th>Mins worked</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worklogs.each do |worklog| %>
+      <tr>
+        <td><%= worklog.mins_worked %></td>
+        <td><%= worklog.description %></td>
+        <td><%= link_to 'Show', worklog %></td>
+        <td><%= link_to 'Edit', edit_worklog_path(worklog) %></td>
+        <td><%= link_to 'Destroy', worklog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worklog', new_worklog_path %>

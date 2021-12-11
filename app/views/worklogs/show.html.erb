@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mins worked:</strong>
+  <%= @worklog.mins_worked %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @worklog.description %>
+</p>
+
+<%= link_to 'Edit', edit_worklog_path(@worklog) %> |
+<%= link_to 'Back', worklogs_path %>
