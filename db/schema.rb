@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_12_11_170136) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -20,13 +23,12 @@ ActiveRecord::Schema.define(version: 2021_12_11_170136) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "projects_id", null: false
+    t.bigint "project_id", null: false
     t.string "name", null: false
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"projects\"", name: "index_tasks_on_projects", unique: true
-    t.index ["projects_id"], name: "index_tasks_on_projects_id"
+    t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,12 +51,12 @@ ActiveRecord::Schema.define(version: 2021_12_11_170136) do
   end
 
   create_table "worklogs", force: :cascade do |t|
-    t.integer "tasks_id", null: false
+    t.bigint "task_id", null: false
     t.decimal "minutes_worked"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tasks_id"], name: "index_worklogs_on_tasks_id"
+    t.index ["task_id"], name: "index_worklogs_on_task_id"
   end
 
 end

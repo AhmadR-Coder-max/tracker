@@ -64,6 +64,6 @@ class WorklogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def worklog_params
-      params.require(:worklog).permit(:minutes_worked, :description, :tasks_id)
+      params.require(:worklog).permit(:minutes_worked, :description, :task_id)
     end
 end
