@@ -13,7 +13,7 @@
 
       <ul class="navbar-nav mb-2 mb-lg-0 float-end">
         <% if user_signed_in? %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-warning" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-light" %>
       <% else %>
           <li class="nav-item me-3">
             <a class="nav-link" href="/users/sign_in"> Log in </a>

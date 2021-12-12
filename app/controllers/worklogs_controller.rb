@@ -4,6 +4,7 @@ class WorklogsController < ApplicationController
   # GET /worklogs or /worklogs.json
   def index
     @worklogs = Worklog.all
+    @worklog = Worklog.new
   end
 
   # GET /worklogs/1 or /worklogs/1.json

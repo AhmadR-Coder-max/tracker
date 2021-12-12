@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :project %>
+    <%= form.collection_select :project_id, Project.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>

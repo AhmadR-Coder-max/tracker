@@ -17,7 +17,7 @@ class WorklogsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create worklog" do
     assert_difference('Worklog.count') do
-      post worklogs_url, params: { worklog: { description: @worklog.description, mins_worked: @worklog.mins_worked } }
+      post worklogs_url, params: { worklog: { description: @worklog.description, minutes_worked: @worklog.minutes_worked } }
     end
 
     assert_redirected_to worklog_url(Worklog.last)
@@ -34,7 +34,7 @@ class WorklogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update worklog" do
-    patch worklog_url(@worklog), params: { worklog: { description: @worklog.description, mins_worked: @worklog.mins_worked } }
+    patch worklog_url(@worklog), params: { worklog: { description: @worklog.description, minutes_worked: @worklog.minutes_worked } }
     assert_redirected_to worklog_url(@worklog)
   end
 

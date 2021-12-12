@@ -15,7 +15,7 @@ class WorklogsTest < ApplicationSystemTestCase
     click_on "New Worklog"
 
     fill_in "Description", with: @worklog.description
-    fill_in "Mins worked", with: @worklog.mins_worked
+    fill_in "Mins worked", with: @worklog.minutes_worked
     click_on "Create Worklog"
 
     assert_text "Worklog was successfully created"
@@ -27,7 +27,7 @@ class WorklogsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Description", with: @worklog.description
-    fill_in "Mins worked", with: @worklog.mins_worked
+    fill_in "Mins worked", with: @worklog.minutes_worked
     click_on "Update Worklog"
 
     assert_text "Worklog was successfully updated"
