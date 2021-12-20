@@ -26,8 +26,8 @@ class WorklogsController < ApplicationController
 
     respond_to do |format|
       if @worklog.save
-        format.html { redirect_to @worklog, notice: "Worklog was successfully created." }
-        format.json { render :show, status: :created, location: @worklog }
+        format.html { redirect_to worklogs_url, notice: "Worklog was successfully created." }
+        format.json { render :index, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @worklog.errors, status: :unprocessable_entity }

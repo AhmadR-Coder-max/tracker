@@ -2,21 +2,21 @@
   <%= form_with(model: worklog) do |form| %>
     <div class="mb-3">
       <%= form.label :task %>
-      <%= form.collection_select :task_id, Task.all, :id, :name, { prompt: "Select a Task" }, class: 'form-select', required: true %>
+      <%= form.collection_select :task_id, Task.all, :id, :name, { prompt: "Select a Task" }, class: 'form-select shadow-sm', required: true %>
     </div>
 
     <div class="mb-3">
       <%= form.label :minutes_worked %>
-      <%= form.number_field :minutes_worked, class: 'form-control', required: true %>
+      <%= form.number_field :minutes_worked, class: 'form-control shadow-sm', required: true %>
     </div>
 
     <div class="mb-3">
       <%= form.label :description %>
-      <%= form.text_area :description, class: 'form-control' %>
+      <%= form.text_area :description, class: 'form-control shadow-sm' %>
     </div>
 
     <div class="text-center">
-      <%= form.submit class: 'btn btn-primary' %>
+      <%= form.submit class: 'btn btn-pink shadow-sm' %>
     </div>
   <% end %>
 </div>
