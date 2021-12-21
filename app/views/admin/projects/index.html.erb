@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="my-4">
+    <h2 class="d-inline-block">Projects</h2>
+    <%= link_to 'New Project', new_admin_project_path, class: 'btn btn-pink shadow-sm float-end' %>
+  </div>
+
+  <table class="table table-bordered table-striped shadow-sm border">
+    <thead class="border bg-white">
+    <tr>
+      <th class="text-center">#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th class="text-center">Actions</th>
+    </tr>
+    </thead>
+
+    <tbody class="border">
+    <% @projects.each_with_index do |project, index| %>
+      <tr>
+        <td class="text-center"><%= index + 1 %></td>
+        <td><%= project.name %></td>
+        <td><%= project.description %></td>
+        <td class="text-center">
+          <%= link_to 'Show', admin_project_path(project), class: 'text-pink me-3' %>
+          <%= link_to 'Edit', edit_admin_project_path(project), class: 'text-pink me-3' %>
+          <%= link_to 'Destroy', admin_project_path(project), class: 'text-pink', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

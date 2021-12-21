@@ -1,0 +1,30 @@
+<div class="container px-5">
+  <%= form_with(model: [:admin, project]) do |form| %>
+    <% if project.errors.any? %>
+      <div class="border bg-white shadow-sm rounded p-3 mb-3">
+        <h3><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h3>
+
+        <ul>
+          <% project.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control shadow-sm' %>
+    </div>
+
+    <div class="mb-5">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: 'form-control shadow-sm' %>
+    </div>
+
+    <div class="text-center">
+      <%= link_to 'Back', admin_projects_path, class: 'text-pink me-3' %>
+      <%= form.submit class: 'btn btn-pink shadow-sm' %>
+    </div>
+  <% end %>
+</div>
