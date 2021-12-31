@@ -24,7 +24,7 @@
         <td class="text-center"><%= worklog.minutes_worked %></td>
         <td><%= truncate worklog.description, length: 90 %></td>
         <td class="text-center"><%= worklog.task.name %></td>
-        <td class="text-center"><%= worklog.created_at.to_date %></td>
+        <td><%= worklog.created_at.to_date %></td>
         <!--        <td><%#= link_to 'Show', worklog %></td>-->
         <!--        <td><%#= link_to 'Edit', edit_worklog_path(worklog) %></td>-->
         <!--        <td><%#= link_to 'Destroy', worklog, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->

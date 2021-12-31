@@ -56,3 +56,11 @@ input:active, input:focus {
   background-color: $pink-color !important;
   color: white !important;
 }
+
+.dropdown-toggle:hover {
+  cursor: pointer !important;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 124, 113, 0.4) !important;
+}

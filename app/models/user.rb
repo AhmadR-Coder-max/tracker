@@ -5,8 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   has_many :projects
-
-  def worklogs
-    Worklog.where(task_id: Task.where(project_id: projects.pluck(:id)).pluck(:id))
-  end
+  has_many :worklogs
 end

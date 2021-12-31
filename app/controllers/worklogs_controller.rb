@@ -3,8 +3,8 @@ class WorklogsController < ApplicationController
 
   # GET /worklogs or /worklogs.json
   def index
-    @worklogs = current_user.worklogs
-    @worklog = Worklog.new
+    @worklogs = current_user.worklogs.all
+    @worklog = current_user.worklogs.build
   end
 
   # GET /worklogs/1 or /worklogs/1.json
@@ -13,7 +13,7 @@ class WorklogsController < ApplicationController
 
   # GET /worklogs/new
   def new
-    @worklog = Worklog.new
+    @worklog = current_user.worklogs.build
   end
 
   # GET /worklogs/1/edit
@@ -22,7 +22,7 @@ class WorklogsController < ApplicationController
 
   # POST /worklogs or /worklogs.json
   def create
-    @worklog = Worklog.new(worklog_params)
+    @worklog = current_user.worklogs.build(worklog_params)
 
     respond_to do |format|
       if @worklog.save
@@ -60,7 +60,7 @@ class WorklogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_worklog
-      @worklog = Worklog.find(params[:id])
+      @worklog = current_user.worklogs..find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
