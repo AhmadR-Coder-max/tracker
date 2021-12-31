@@ -1,0 +1,28 @@
+<section class="container">
+  <h2 class="text-center m-4"> Users </h2>
+
+  <table class="table border table-striped shadow-sm">
+    <thead class="bg-pink text-white">
+    <tr>
+      <th class="text-center">#</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th class="text-center">Admin</th>
+      <th class="text-center">Joined At</th>
+      <th class="text-center">Login As</th>
+    </tr>
+    </thead>
+    <tbody class="border">
+    <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td class="text-center"><%= index + 1 %></td>
+      <td><%= user.full_name %></td>
+      <td><%= user.email %></td>
+      <td class="text-center"><%= user.admin ? 'Yes' : 'No' %></td>
+      <td class="text-center"><%= user.created_at.strftime('%d %B %y') %></td>
+      <td class="text-center"><%= link_to "Log in", masquerade_path(user), class: 'text-pink' %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

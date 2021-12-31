@@ -19,15 +19,22 @@
       <ul class="navbar-nav mb-2 mb-lg-0 float-end">
         <% if user_signed_in? %>
           <% if user_is_admin? %>
-            <li class="nav-item me-3">
+            <li class="nav-item me-1">
               <a class="nav-link" href="/admin"> Admin </a>
             </li>
+
+            <% if user_masquerade? %>
+              <li class="nav-item me-3">
+                <%= link_to "Reverse masquerade", back_masquerade_path(current_user), class: 'nav-link' %>
+              </li>
+            <% end %>
           <% end %>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-pink shadow-sm m-0" %>
         <% else %>
           <li class="nav-item me-3">
             <a class="nav-link" href="/users/sign_in"> Log in </a>
           </li>
+
           <li class="nav-item">
             <a class="btn btn-pink shadow-sm" href="/users/sign_up"> Get Started </a>
           </li>
