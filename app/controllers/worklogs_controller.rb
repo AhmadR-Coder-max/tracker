@@ -3,7 +3,7 @@ class WorklogsController < ApplicationController
 
   # GET /worklogs or /worklogs.json
   def index
-    @worklogs = Worklog.all
+    @worklogs = current_user.worklogs
     @worklog = Worklog.new
   end
 
