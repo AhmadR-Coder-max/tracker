@@ -1,8 +1,8 @@
-<div class="float-end m-3">
-  <% flash.each do |name, msg| %>
+<% flash.each do |name, msg| %>
+  <div class="float-end m-3">
     <div class="shadow alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
       <%= msg %>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

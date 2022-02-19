@@ -4,22 +4,22 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="mb-3 pt-1">
-      <%= f.label :email %><br/>
+    <div class="my-3">
+      <%= f.label :email, class: 'form-label' %><br/>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control shadow-sm", placeholder: "ahmad@email.com" %>
     </div>
 
-    <div class="mb-3 pt-1">
-      <%= f.label :password %>
+    <div class="my-3">
+      <%= f.label :password, class: 'form-label' %>
       <%= f.password_field :password, autocomplete: "new-password", class: "form-control shadow-sm", placeholder: "Password (6 characters minimum)" %>
     </div>
 
-    <div class="mb-3 pt-1">
-      <%= f.label :password_confirmation %><br/>
+    <div class="my-3">
+      <%= f.label :password_confirmation, class: 'form-label' %><br/>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control shadow-sm", placeholder: "Password Confirmation" %>
     </div>
 
-    <div class="mb-3 pt-1">
+    <div class="my-3">
       <%= f.submit "Sign up", class: 'btn btn-pink shadow-sm' %>
     </div>
   <% end %>

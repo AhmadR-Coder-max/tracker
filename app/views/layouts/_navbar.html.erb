@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white bg-opacity-50 shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bolder" href="/">
       <span class="px-2 p-1 bg-pink rounded text-white shadow-sm">Learn</span>
@@ -48,6 +48,24 @@
           </li>
         <% end %>
       </ul>
+      <button class="btn ms-3" id="modeToggler" onclick="toggleDarkMode()">🌑</button>
     </div>
   </div>
 </nav>
+
+<script>
+
+    function toggleDarkMode() {
+        let body = document.querySelector('body');
+        let button = document.querySelector('#modeToggler');
+
+        if (button.innerHTML == "🌑") {
+            button.innerHTML = "⚡";
+        } else {
+            button.innerHTML = "🌑";
+        }
+
+        body.classList.toggle('dark-mode');
+    }
+
+</script>

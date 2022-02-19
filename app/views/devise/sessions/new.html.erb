@@ -2,24 +2,24 @@
   <h1 class="mt-5 mb-3 fw-normal">Log in</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="mb-3 pt-1">
-      <%= f.label :email %><br/>
+    <div class="my-3">
+      <%= f.label :email, class: 'form-label' %><br/>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control shadow-sm' %>
     </div>
 
-    <div class="mb-3 pt-1">
-      <%= f.label :password %><br/>
+    <div class="my-3">
+      <%= f.label :password, class: 'form-label' %><br/>
       <%= f.password_field :password, autocomplete: "current-password", class: 'form-control shadow-sm' %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="mb-2 pt-1 form-check">
+      <div class="my-3 form-check">
         <%= f.check_box :remember_me, class: 'form-check-input', checked: true %>
         <%= f.label :remember_me, class: 'form-check-label' %>
       </div>
     <% end %>
 
-    <div class="mb-3">
+    <div class="my-3">
       <%= f.submit "Log in", class: 'btn btn-pink shadow-sm' %>
       <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'text-pink float-end mt-2' %>
     </div>
