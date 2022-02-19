@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,5 +17,32 @@
     <div class="mt-7">
       <%= yield %>
     </div>
+
+    <script>
+      let body = document.querySelector('body');
+      let button = document.querySelector('#modeToggler');
+
+      document.addEventListener('DOMContentLoaded', () => {
+          if (sessionStorage.getItem("mode") == "light") {
+              body.classList.remove('dark-mode');
+              button.innerHTML = "🌑";
+          } else {
+              body.classList.add('dark-mode');
+              button.innerHTML = "⚡";
+          }
+      })
+
+        function toggleDarkMode() {
+            if (sessionStorage.getItem("mode") == "dark") {
+                sessionStorage.setItem("mode", "light");
+                button.innerHTML = "🌑";
+            } else {
+                sessionStorage.setItem("mode", "dark");
+                button.innerHTML = "⚡";
+            }
+
+            body.classList.toggle('dark-mode');
+        }
+    </script>
   </body>
 </html>

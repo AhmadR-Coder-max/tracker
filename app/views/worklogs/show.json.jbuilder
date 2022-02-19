@@ -1,1 +1,1 @@
-json.partial! "worklogs/worklog", worklog: @worklog
+json.partial! 'worklogs/worklog', worklog: @worklog
