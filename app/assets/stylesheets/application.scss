@@ -34,10 +34,40 @@ body.dark-mode {
   nav a {
     color: #fff !important;
   }
+
+  a.bg-white.text-pink {
+    background: $pink-color !important;
+    color: white !important;
+  }
+
+  thead {
+    background-color: rgba(256,256,256,.75) !important;
+  }
+
+  tbody, td {
+    background-color: rgba(256,256,256,.25) !important;
+    color: white !important;
+
+    .text-white {
+      color: $pink-color !important;
+    }
+  }
+
+  .modal-content {
+    background-color: rgba(35, 35, 35, 0.85) !important;
+  }
+
+  .modal-content .btn-close {
+    background-color: white;
+  }
 }
 
 .bg-pink {
   background-color: $pink-color !important;
+}
+
+.curved {
+  border-radius: .5rem;
 }
 
 .mt-7 {

@@ -19,18 +19,18 @@
     </div>
 
     <script>
-      let body = document.querySelector('body');
-      let button = document.querySelector('#modeToggler');
+        const body = document.querySelector('body');
+        const button = document.querySelector('#modeToggler');
 
-      document.addEventListener('DOMContentLoaded', () => {
-          if (sessionStorage.getItem("mode") == "light") {
-              body.classList.remove('dark-mode');
-              button.innerHTML = "🌑";
-          } else {
-              body.classList.add('dark-mode');
-              button.innerHTML = "⚡";
-          }
-      })
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem("mode") == "light") {
+                body.classList.remove('dark-mode');
+                button.innerHTML = "🌑";
+            } else {
+                body.classList.add('dark-mode');
+                button.innerHTML = "⚡";
+            }
+        })
 
         function toggleDarkMode() {
             if (sessionStorage.getItem("mode") == "dark") {

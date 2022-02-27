@@ -1,18 +1,18 @@
 <div class="container">
   <%= form_with(model: worklog) do |form| %>
     <div class="mb-3">
-      <%= form.label :task %>
-      <%= form.collection_select :task_id, Task.all, :id, :name, { prompt: "Select a Task" }, class: 'form-select shadow-sm', required: true %>
+      <%= form.label :task, class: 'form-label' %>
+      <%= form.collection_select :task_id, Task.all, :id, :name, { prompt: "Select a Task" }, class: 'form-select', required: true %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :minutes_worked %>
-      <%= form.number_field :minutes_worked, class: 'form-control shadow-sm', required: true %>
+      <%= form.label :minutes_worked, class: 'form-label' %>
+      <%= form.number_field :minutes_worked, class: 'form-control', required: true %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :description %>
-      <%= form.text_area :description, class: 'form-control shadow-sm' %>
+      <%= form.label :description, class: 'form-label' %>
+      <%= form.text_area :description, class: 'form-control' %>
     </div>
 
     <div class="text-center">
