@@ -1,1 +1,1 @@
-json.array! @worklogs, partial: "worklogs/worklog", as: :worklog
+json.array! @worklogs, partial: 'worklogs/worklog', as: :worklog

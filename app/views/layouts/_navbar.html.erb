@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white bg-opacity-50 shadow-sm fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bolder" href="/">
+    <a data-turbolinks="false" class="navbar-brand fw-bolder" href="/">
       <span class="px-2 p-1 bg-pink rounded text-white shadow-sm">Learn</span>
       Programming
     </a>
@@ -11,7 +11,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <% if user_signed_in? %>
-            <a class="nav-link" href="/worklogs"> Time Logs </a>
+            <a data-turbolinks="false" class="nav-link" href="/worklogs"> Time Logs </a>
           <% end %>
         </li>
       </ul>
@@ -19,13 +19,13 @@
       <ul class="navbar-nav mb-2 mb-lg-0 float-end">
         <% if user_masquerade? %>
           <li class="nav-item me-3">
-            <%= link_to "Reverse masquerade", back_masquerade_path(current_user), class: 'nav-link' %>
+            <%= link_to "Reverse masquerade", back_masquerade_path(current_user), class: 'nav-link', 'data-turbolinks' => 'false' %>
           </li>
         <% end %>
         <% if user_signed_in? %>
           <% if user_is_admin? %>
             <li class="nav-item me-1">
-              <a class="nav-link" href="/admin"> Admin </a>
+              <a data-turbolinks="false" class="nav-link" href="/admin"> Admin </a>
             </li>
           <% end %>
           <div class="btn-group">
@@ -34,20 +34,21 @@
             </a>
             <ul class="dropdown-menu shadow-sm dropdown-menu-end dropdown-menu-lg-start">
               <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item" %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item", 'data-turbolinks': "false" %>
               </li>
             </ul>
           </div>
         <% else %>
           <li class="nav-item me-3">
-            <a class="nav-link" href="/users/sign_in"> Log in </a>
+            <a data-turbolinks="false" class="nav-link" href="/users/sign_in"> Log in </a>
           </li>
 
           <li class="nav-item">
-            <a class="btn btn-pink shadow-sm" href="/users/sign_up"> Get Started </a>
+            <a data-turbolinks="false" class="btn btn-pink shadow-sm" href="/users/sign_up"> Get Started </a>
           </li>
         <% end %>
       </ul>
+      <button class="btn bg-light  bg-opacity-10 rounded-circle ms-3" id="modeToggler" onclick="toggleDarkMode()">🌑</button>
     </div>
   </div>
 </nav>

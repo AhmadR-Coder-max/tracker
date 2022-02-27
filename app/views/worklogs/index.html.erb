@@ -1,7 +1,7 @@
 <section class="container">
   <div class="mb-4 mt-5">
     <h2 class="d-inline-block">Working Logs</h2>
-    <a href="#" type="button" class="btn btn-pink shadow-sm float-end" data-bs-toggle="modal" data-bs-target="#newWorkLog">
+    <a href="#" type="button" class="btn bg-white text-pink shadow-sm float-end curved" data-bs-toggle="modal" data-bs-target="#newWorkLog">
       + Add Log
     </a>
   </div>
@@ -17,14 +17,14 @@
     </tr>
     </thead>
 
-    <tbody class="border">
+    <tbody class="border bg-white bg-opacity-75">
     <% @worklogs.each_with_index do |worklog, index| %>
       <tr>
         <td class="text-center"><%= index + 1 %></td>
         <td class="text-center"><%= worklog.minutes_worked %></td>
         <td><%= truncate worklog.description, length: 90 %></td>
         <td class="text-center"><%= worklog.task.name %></td>
-        <td><%= worklog.created_at.to_date %></td>
+        <td class="text-center"><%= worklog.created_at.to_date %></td>
         <!--        <td><%#= link_to 'Show', worklog %></td>-->
         <!--        <td><%#= link_to 'Edit', edit_worklog_path(worklog) %></td>-->
         <!--        <td><%#= link_to 'Destroy', worklog, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->

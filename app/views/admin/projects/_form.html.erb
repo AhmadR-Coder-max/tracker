@@ -13,18 +13,18 @@
     <% end %>
 
     <div class="mb-3">
-      <%= form.label :name %>
+      <%= form.label :name, class: 'form-label' %>
       <%= form.text_field :name, class: 'form-control shadow-sm' %>
     </div>
 
     <div class="mb-5">
-      <%= form.label :description %>
+      <%= form.label :description, class: 'form-label' %>
       <%= form.text_field :description, class: 'form-control shadow-sm' %>
     </div>
 
     <div class="text-center">
-      <%= link_to 'Back', admin_projects_path, class: 'text-pink me-3' %>
-      <%= form.submit class: 'btn btn-pink shadow-sm' %>
+      <%= link_to 'Back', admin_projects_path, class: 'text-pink me-3', 'data-turbolinks': 'false' %>
+      <%= form.submit class: 'btn btn-pink shadow-sm', 'data-turbolinks': 'false' %>
     </div>
   <% end %>
 </div>

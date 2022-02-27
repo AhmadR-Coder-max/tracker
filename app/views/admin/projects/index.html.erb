@@ -1,7 +1,7 @@
 <div class="container">
   <div class="my-4">
     <h2 class="d-inline-block">Projects</h2>
-    <%= link_to 'New Project', new_admin_project_path, class: 'btn btn-pink shadow-sm float-end' %>
+    <%= link_to 'New Project', new_admin_project_path, class: 'btn bg-white text-pink shadow-sm float-end curved', 'data-turbolinks': 'false' %>
   </div>
 
   <table class="table table-bordered table-striped shadow-sm border">
@@ -21,9 +21,9 @@
         <td><%= project.name %></td>
         <td><%= project.description %></td>
         <td class="text-center">
-          <%= link_to 'Show', admin_project_path(project), class: 'text-pink me-3' %>
-          <%= link_to 'Edit', edit_admin_project_path(project), class: 'text-pink me-3' %>
-          <%= link_to 'Destroy', admin_project_path(project), class: 'text-pink', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', admin_project_path(project), class: 'text-white me-3', 'data-turbolinks': 'false' %>
+          <%= link_to 'Edit', edit_admin_project_path(project), class: 'text-white me-3', 'data-turbolinks': 'false' %>
+          <%= link_to 'Destroy', admin_project_path(project), class: 'text-white', method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>

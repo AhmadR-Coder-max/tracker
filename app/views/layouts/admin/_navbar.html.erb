@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white bg-opacity-50 shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bolder" href="/admin">
+    <a data-turbolinks="false" class="navbar-brand fw-bolder" href="/admin">
       <span class="px-2 p-1 bg-pink rounded text-white shadow-sm">Admin</span>
       Panel
     </a>
@@ -10,20 +10,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/admin/projects"> Projects </a>
+          <a data-turbolinks="false" class="nav-link" href="/admin/projects"> Projects </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/admin/users"> Users </a>
+          <a data-turbolinks="false" class="nav-link" href="/admin/users"> Users </a>
         </li>
       </ul>
 
       <ul class="navbar-nav mb-2 mb-lg-0 float-end">
         <li class="nav-item me-3">
-          <a class="nav-link" href="/"> Go Back </a>
+          <a data-turbolinks="false" class="nav-link" href="/"> Go Back </a>
         </li>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-pink shadow-sm m-0" %>
       </ul>
     </div>
+    <button class="btn bg-light  bg-opacity-10 rounded-circle ms-3" id="modeToggler" onclick="toggleDarkMode()">🌑</button>
   </div>
 </nav>

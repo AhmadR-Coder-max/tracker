@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 
+require("../custom_js/dark_mode");
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
